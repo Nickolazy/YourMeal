@@ -1,0 +1,64 @@
+<template>
+  <div class="flex justify-between items-center my-5
+    font-nunito text-black">
+    <div class="flex gap-3">
+      <img 
+      class="w-24 h-auto rounded-xl shadow-md"
+      :src="getImageUrl(item.img)"  
+      alt="icon">
+      <div class="flex flex-col gap-2">
+        <div>
+          <div class="font-medium text-lg leading-none">
+            {{ item.name }}
+          </div>
+          <div class="font-normal text-base text-lightText">
+            {{ item.weight }}г
+          </div>
+        </div>
+        <div class="font-medium text-lg">
+          {{ item.cost }}₽
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray flex justify-between w-1/3 py-3 px-5 rounded-2xl
+      font-normal text-2xl">
+      <button @click="handleRemove" class="text-3xl hover:scale-125 active:scale-95 transition-transform
+        duration-100 ease-in-out"> - </button>
+        {{ item.amount }}
+      <button @click="handleAdd" class="hover:scale-125 active:scale-95 transition-transform 
+        duration-100 ease-in-out"> + </button>
+    </div>
+  </div>
+</template>
+
+<script setup>
+  const props = defineProps({
+    item: {
+      type: Object,
+      required: true
+    },
+    addToBasket: {
+      type: Function,
+      required: true
+    },
+    removeFromBasket: {
+      type: Function,
+      required: true
+    }
+  });
+
+  const { item, addToBasket, removeFromBasket } = props;
+
+  const handleAdd = () => {
+    addToBasket(item.type, item.id);;
+  };
+
+  const handleRemove = () => {
+    removeFromBasket(item.type, item.id);
+  };
+
+  function getImageUrl(imgPath) {
+    return new URL(`../../${imgPath}`, import.meta.url).href;
+  };
+
+</script>

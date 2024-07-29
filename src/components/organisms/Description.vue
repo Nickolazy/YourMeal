@@ -3,6 +3,6 @@
     
   </div>
 </template>
-<script scoped>
+<script setup>
 
 </script>
