@@ -244,26 +244,30 @@ export const useMenuStore = defineStore('MenuStore', {
   },
 
   actions: {
-    addToBasket(type, id) {
-      const amount = 1;
+    addToBasket(type, id, amount) {
       const itemIndex = this.basket.findIndex(item => item.type === type && item.id === id);
-      if (itemIndex !== -1) {
+
+      if(itemIndex > -1) {
         this.basket[itemIndex].amount += amount;
-
       } else {
-        this.basket.push({ type, id, amount });
-
+        this.basket.push({type, id, amount});
       }
+
+      return this.basket[itemIndex].amount;
     },
 
-    removeFromBasket(type, id) {
-      const amount = 1;
+    removeFromBasket(type, id, amount) {
       const itemIndex = this.basket.findIndex(item => item.type === type && item.id === id);
-      if (itemIndex !== -1) {
+
+      if (itemIndex > -1) {
         if (this.basket[itemIndex].amount <= amount) {
           this.basket.splice(itemIndex, 1);
+
+          return null;
         } else {
-          this.basket[itemIndex].amount -= amount;
+          this.basket[itemIndex].amount -= 1;
+
+          return this.basket[itemIndex].amount;
         }
       }
     }

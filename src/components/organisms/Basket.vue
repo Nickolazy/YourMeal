@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-3xl w-[425px] p-5 shadow-xl">
+  <div class="bg-white rounded-3xl w-[425px] h-full flex-shrink-0 p-5 shadow-xl">
     <div class="flex justify-between items-start
       font-nunito text-black">
       <div class="font-bold text-2xl mb-3">
@@ -30,7 +30,7 @@
       </div>
       <div class="flex justify-center my-4">
         <button class="w-full p-2 rounded-xl font-nunito font-base text-lg shadow-xl
-         bg-orange text-white hover:bg-lightOrange hover:text-white hover:scale-105
+         bg-orange text-white hover:bg-lightOrange hover:scale-105
         hover:border-white active:scale-100 transition-transform duration-100 ease-in-out">
           Оформить заказ
         </button>

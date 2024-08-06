@@ -12,6 +12,7 @@ export default {
         blue: "#5cb6ff",
         yellow: "#FFAB08",
         gray: "#F2F2F3",
+        midGray: "#ebebeb",
         darkGray: "#CFCFCF",
         lightText: "#B1B1B1"
 

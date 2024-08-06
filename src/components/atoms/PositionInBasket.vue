@@ -32,6 +32,8 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
+
   const props = defineProps({
     item: {
       type: Object,
@@ -50,12 +52,16 @@
   const { item, addToBasket, removeFromBasket } = props;
 
   const handleAdd = () => {
-    addToBasket(item.type, item.id);;
+    item.amount = addToBasket(item.type, item.id, 1);
   };
 
   const handleRemove = () => {
-    removeFromBasket(item.type, item.id);
+    item.amount = removeFromBasket(item.type, item.id, 1);
   };
+
+  // item.amount = computed(() => {
+  //   return item.amount;
+  // });
 
   function getImageUrl(imgPath) {
     return new URL(`../../${imgPath}`, import.meta.url).href;
