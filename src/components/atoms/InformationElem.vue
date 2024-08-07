@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-3xl shadow-xl w-[400px] p-4">
+    <div class="bg-white rounded-3xl shadow-xl w-[400px] p-4 hover:scale-105 transition-transform duration-100 ease-in-out">
       <img 
         class="w-full"
         :src="getImageUrl(item.img)" 
@@ -21,7 +21,7 @@
       <div class="flex justify-center">
         <button @click="handleClick" class="w-full p-2 rounded-xl font-nunito font-base text-lg
         bg-midGray text-black hover:scale-105
-        hover:border-white active:scale-100 transition-transform duration-100 ease-in-out">
+        hover:border-white active:scale-95 transition-transform duration-100 ease-in-out">
           Добавить
         </button>
       </div>

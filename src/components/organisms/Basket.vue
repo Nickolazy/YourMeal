@@ -11,10 +11,12 @@
     </div>
     <div v-if="countPositions">
       <hr class="border-darkGray">
-      <PositionInBasket v-for="item in positions" :key="item.id" 
+      <PositionInBasket v-for="item in positions" 
+        :key="item.id" 
         :item="item"
         :addToBasket="addToBasket"
-        :removeFromBasket="removeFromBasket"/>
+        :removeFromBasket="removeFromBasket"
+        :getAmountOfItem="getAmountOfItem"/>
 
       <hr class="border-darkGray">
 
@@ -29,7 +31,7 @@
         </div>
       </div>
       <div class="flex justify-center my-4">
-        <button class="w-full p-2 rounded-xl font-nunito font-base text-lg shadow-xl
+        <button @click="emitDelivClick" class="w-full p-2 rounded-xl font-nunito font-base text-lg shadow-xl
          bg-orange text-white hover:bg-lightOrange hover:scale-105
         hover:border-white active:scale-100 transition-transform duration-100 ease-in-out">
           Оформить заказ
@@ -66,6 +68,13 @@
 
   const addToBasket = props.menuStore.addToBasket;
   const removeFromBasket = props.menuStore.removeFromBasket;
+  const getAmountOfItem = props.menuStore.getAmountOfItem;
 
   const isFreeDelivery = computed(() => costOfBasket.value >= 599);
+
+  const emit = defineEmits(['delivClicked']);
+
+  const emitDelivClick = () => {
+    emit('delivClicked');
+  };
 </script>

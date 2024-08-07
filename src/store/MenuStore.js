@@ -240,21 +240,26 @@ export const useMenuStore = defineStore('MenuStore', {
         const product = items.find(product => product.id === item.id);
         return product ? { ...product, amount: item.amount } : null;
       }).filter(item => item !== null);
+    },
+
+    getAmountOfItem: (state) => (type, id) => {
+      const item = state.basket.find(item => item.type === type && item.id === id);
+      return item ? item.amount : 0;
     }
   },
 
   actions: {
     addToBasket(type, id, amount) {
       const itemIndex = this.basket.findIndex(item => item.type === type && item.id === id);
-
-      if(itemIndex > -1) {
+    
+      if (itemIndex > -1) {
         this.basket[itemIndex].amount += amount;
+        return this.basket[itemIndex].amount;
       } else {
-        this.basket.push({type, id, amount});
+        this.basket.push({ type, id, amount });
+        return amount;
       }
-
-      return this.basket[itemIndex].amount;
-    },
+    },    
 
     removeFromBasket(type, id, amount) {
       const itemIndex = this.basket.findIndex(item => item.type === type && item.id === id);

@@ -4,7 +4,8 @@
     <Header />
     <div class="mx-10 flex">
       <Basket 
-      :menuStore="menuStore"/>
+      :menuStore="menuStore"
+      @delivClicked="handleDelivOpen"/>
 
       <InformationPage 
       :menuStore="menuStore"
@@ -21,6 +22,12 @@
     :type="selectedItemType"
     @itemClicked="handleItemClose"/>
   </div>
+
+  <div v-if="isDelivopened">
+    <Delivery
+    :menuStore="menuStore"
+    @delivClicked="handleDelivClose"/>
+  </div>
 </template>
 
 <script setup>
@@ -30,7 +37,7 @@
   import InformationPage from "./components/organisms/InformationPage.vue";
   import Footer from "./components/organisms/Footer.vue";
   import Description from "./components/organisms/Description.vue";
-
+  import Delivery from "./components/organisms/Delivery.vue";
 
   import { useMenuStore } from "./store/MenuStore";
   import { ref } from "vue";
@@ -38,6 +45,7 @@
   const menuStore = useMenuStore();
 
   const isDescOpened = ref(false);
+  const isDelivopened = ref(false);
   const selectedItemId = ref(null);
   const selectedItemType = ref(null);
 
@@ -47,10 +55,16 @@
     isDescOpened.value = true;
   };
 
+  const handleDelivOpen = () => {
+    isDelivopened.value = true;
+  };
+
+  const handleDelivClose = () => {
+    isDelivopened.value = false;
+  };
+
   const handleItemClose = (id, type) => {
     isDescOpened.value = false;
   };
-
-  console.log(menuStore.basket);
 
 </script>

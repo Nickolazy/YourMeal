@@ -19,9 +19,8 @@ const props = defineProps({
     }
   });
 
-  const emit = defineEmits(['itemClicked']);
-
   const positions = computed(() => props.menuStore.burgers);
+  const emit = defineEmits(['itemClicked']);
 
   const emitItemClick = (id, type) => {
     emit('itemClicked', id, type);

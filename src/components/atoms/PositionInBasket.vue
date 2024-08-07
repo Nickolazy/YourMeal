@@ -24,7 +24,7 @@
       font-normal text-2xl">
       <button @click="handleRemove" class="text-3xl hover:scale-125 active:scale-95 transition-transform
         duration-100 ease-in-out"> - </button>
-        {{ item.amount }}
+        {{ itemAmount }}
       <button @click="handleAdd" class="hover:scale-125 active:scale-95 transition-transform 
         duration-100 ease-in-out"> + </button>
     </div>
@@ -46,24 +46,26 @@ import { computed } from 'vue';
     removeFromBasket: {
       type: Function,
       required: true
+    },
+    getAmountOfItem: {
+      type: Function,
+      required: true
     }
   });
 
-  const { item, addToBasket, removeFromBasket } = props;
+  const { item, addToBasket, removeFromBasket, getAmountOfItem } = props;
 
   const handleAdd = () => {
-    item.amount = addToBasket(item.type, item.id, 1);
+    itemAmount = addToBasket(item.type, item.id, 1);
   };
 
   const handleRemove = () => {
-    item.amount = removeFromBasket(item.type, item.id, 1);
+    itemAmount = removeFromBasket(item.type, item.id, 1);
   };
 
-  // item.amount = computed(() => {
-  //   return item.amount;
-  // });
-  //
-  //
+  let itemAmount = computed(() => {
+    return getAmountOfItem(props.item.type, props.item.id);
+  });
 
   function getImageUrl(imgPath) {
     return new URL(`../../${imgPath}`, import.meta.url).href;
