@@ -62,6 +62,8 @@ import { computed } from 'vue';
   // item.amount = computed(() => {
   //   return item.amount;
   // });
+  //
+  //
 
   function getImageUrl(imgPath) {
     return new URL(`../../${imgPath}`, import.meta.url).href;
