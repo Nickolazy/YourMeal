@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-3xl w-[425px] h-full flex-shrink-0 p-5 shadow-xl">
+  <div class="bg-white rounded-3xl xl:w-[360px] 2xl:w-[425px] h-full flex-shrink-0 p-5 shadow-xl">
     <div class="flex justify-between items-start
       font-nunito text-black">
       <div class="font-bold text-2xl mb-3">

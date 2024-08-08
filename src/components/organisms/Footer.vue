@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white flex mt-32">
-    <div class="mt-10 mb-5 mx-20 mr-60 w-full flex justify-between items-start flex-wrap">
+    <div class="mt-10 mb-5 xl:mx-14 2xl:mx-20 xl:mr-20 2xl:mr-60 w-full flex justify-between items-start flex-wrap">
     <div class="grid gap-6">
       <img 
       class=""

@@ -1,8 +1,11 @@
 <template>
   <div class="bg-gray min-h-screen">
     <Brand />
-    <Header />
-    <div class="mx-10 flex">
+    <Header 
+    :menuHeader="menuHeader"
+    :isActiveButton="isActiveButton"
+    @update:isActiveButton="isActiveButton = $event"/>
+    <div class="mx-10 flex items-start">
       <Basket 
       :menuStore="menuStore"
       @delivClicked="handleDelivOpen"/>
@@ -10,7 +13,8 @@
       <InformationPage 
       :menuStore="menuStore"
       :isDescOpened="isDescOpened"
-      @itemClicked="handleItemOpen"/>
+      @itemClicked="handleItemOpen"
+      :isActiveButton="isActiveButton"/>
     </div>
     <Footer />
   </div>
@@ -55,6 +59,10 @@
     isDescOpened.value = true;
   };
 
+  const handleItemClose = (id, type) => {
+    isDescOpened.value = false;
+  };
+
   const handleDelivOpen = () => {
     isDelivopened.value = true;
   };
@@ -63,8 +71,18 @@
     isDelivopened.value = false;
   };
 
-  const handleItemClose = (id, type) => {
-    isDescOpened.value = false;
-  };
+  const menuHeader = [
+    { name: "Бургеры", icon: new URL('assets/img/icons/Бургеры.svg', import.meta.url).href },
+    { name: "Закуски", icon: new URL('assets/img/icons/Закуски.svg', import.meta.url).href },
+    { name: "Хотдоги", icon: new URL('assets/img/icons/Хот-доги.svg', import.meta.url).href },
+    { name: "Комбо", icon: new URL('assets/img/icons/Комбо.svg', import.meta.url).href },
+    { name: "Шаурма", icon: new URL('assets/img/icons/Шаурма.svg', import.meta.url).href },
+    { name: "Пицца", icon: new URL('assets/img/icons/Пицца.svg', import.meta.url).href },
+    { name: "Вок", icon: new URL('assets/img/icons/Вок.svg', import.meta.url).href },
+    { name: "Десерты", icon: new URL('assets/img/icons/Десерты.svg', import.meta.url).href },
+    { name: "Соусы", icon: new URL('assets/img/icons/Соусы.svg', import.meta.url).href },
+  ];
+
+  const isActiveButton = ref(menuHeader[0].name);
 
 </script>

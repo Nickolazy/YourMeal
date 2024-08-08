@@ -2,10 +2,10 @@ import { defineStore } from 'pinia';
 
 export const useMenuStore = defineStore('MenuStore', {
   state: () => ({
-    burgers: [
+    Бургеры: [
       {
         id: 1,
-        type: "burgers",
+        type: "Бургеры",
 
         name: "Мясная бомба",
         img: "assets/img/png/Burgers/Мясная бомба.png",
@@ -25,7 +25,7 @@ export const useMenuStore = defineStore('MenuStore', {
       },
       {
         id: 2,
-        type: "burgers",
+        type: "Бургеры",
         name: "Супер Сырный",
         img: "assets/img/png/Burgers/Супер Сырный.png",
         cost: 749,
@@ -42,7 +42,7 @@ export const useMenuStore = defineStore('MenuStore', {
       },
       {
         id: 3,
-        type: "burgers",
+        type: "Бургеры",
         name: "Итальянский",
         img: "assets/img/png/Burgers/Итальянский.png",
         cost: 699,
@@ -59,7 +59,7 @@ export const useMenuStore = defineStore('MenuStore', {
       },
       {
         id: 4,
-        type: "burgers",
+        type: "Бургеры",
         name: "Сытный",
         img: "assets/img/png/Burgers/Сытный.png",
         cost: 729,
@@ -76,7 +76,7 @@ export const useMenuStore = defineStore('MenuStore', {
       },
       {
         id: 5,
-        type: "burgers",
+        type: "Бургеры",
         name: "Тяжелый удар",
         img: "assets/img/png/Burgers/Тяжелый удар.png",
         cost: 799,
@@ -93,7 +93,7 @@ export const useMenuStore = defineStore('MenuStore', {
       },
       {
         id: 6,
-        type: "burgers",
+        type: "Бургеры",
         name: "Вечная Классика",
         img: "assets/img/png/Burgers/Вечная классика.png",
         cost: 659,
@@ -109,116 +109,107 @@ export const useMenuStore = defineStore('MenuStore', {
         }
       }
     ],
-    snacks: [
+    Закуски: [
       {
         id: 1,
-        type: "snacks",
-        name: "Хрустящие картофельные палочки",
-        img: "assets/img/png/Snacks/Хрустящие картофельные палочки.png",
-        cost: 349,
-        weight: 300,
-        calorie: 400,
-        description: "Золотистые палочки из картофеля с хрустящей корочкой. Подаются с соусом по вашему выбору.",
+        type: "Закуски",
+        name: "Начос",
+        img: "assets/img/png/Snacks/Начос.png",
+        cost: 250,
+        weight: 220,
+        calorie: 320,
+        description: "Хрустящие кукурузные начос с пикантным сырным соусом и легким ароматом специй. Идеальная закуска для быстрого перекуса.",
         composition: {
-          1: "Картофель",
-          2: "Мука",
-          3: "Соль",
-          4: "Перец",
-          5: "Соус (по выбору)"
+          1: "Кукурузные чипсы",
+          2: "Сырный соус",
+          3: "Специи"
         }
       },
       {
         id: 2,
-        type: "snacks",
-        name: "Чизстики",
-        img: "assets/img/png/Snacks/Чизстики.png",
-        cost: 399,
-        weight: 250,
-        calorie: 350,
-        description: "Хрустящие палочки из сыра, обжаренные до золотистой корочки. Идеальны в качестве закуски.",
+        type: "Закуски",
+        name: "Картошка фри",
+        img: "assets/img/png/Snacks/Картошка фри.png",
+        cost: 245,
+        weight: 180,
+        calorie: 290,
+        description: "Классическая картошка фри, обжаренная до золотистой корочки. Идеальный выбор для любителей хрустящего и сытного гарнира.",
         composition: {
-          1: "Сыр моцарелла",
-          2: "Мука",
-          3: "Яйцо",
-          4: "Сухари",
-          5: "Соль"
+          1: "Картофель",
+          2: "Растительное масло",
+          3: "Соль"
         }
       },
       {
         id: 3,
-        type: "snacks",
-        name: "Острые куриные крылышки",
-        img: "assets/img/png/Snacks/Острые куриные крылышки.png",
-        cost: 449,
-        weight: 400,
-        calorie: 550,
-        description: "Сочные куриные крылышки, маринованные в остром соусе и обжаренные до хрустящей корочки.",
-        composition: {
-          1: "Куриные крылышки",
-          2: "Острый соус",
-          3: "Соль",
-          4: "Перец",
-          5: "Специи"
-        }
-      },
-      {
-        id: 4,
-        type: "snacks",
+        type: "Закуски",
         name: "Луковые кольца",
         img: "assets/img/png/Snacks/Луковые кольца.png",
-        cost: 379,
-        weight: 280,
-        calorie: 420,
-        description: "Хрустящие луковые кольца, обжаренные в панировке. Подаются с соусом ранч.",
+        cost: 230,
+        weight: 160,
+        calorie: 310,
+        description: "Золотистые луковые кольца с хрустящей корочкой и нежным луком внутри. Прекрасное дополнение к любому блюду.",
         composition: {
           1: "Лук",
-          2: "Мука",
-          3: "Яйцо",
-          4: "Сухари",
-          5: "Соус ранч"
+          2: "Панировочные сухари",
+          3: "Растительное масло",
+          4: "Специи"
         }
-      },
+      }          
+    ],
+    Хотдоги: [
       {
-        id: 5,
-        type: "snacks",
-        name: "Куриные наггетсы",
-        img: "assets/img/png/Snacks/Куриные наггетсы.png",
-        cost: 399,
-        weight: 300,
-        calorie: 450,
-        description: "Мягкие и сочные куриные наггетсы, обжаренные до золотистой корочки. Подаются с соусом барбекю.",
-        composition: {
-          1: "Куриное филе",
-          2: "Мука",
-          3: "Яйцо",
-          4: "Сухари",
-          5: "Соус барбекю"
-        }
-      },
-      {
-        id: 6,
-        type: "snacks",
-        name: "Мини-буррито",
-        img: "assets/img/png/Snacks/Мини-буррито.png",
-        cost: 429,
+        id: 1,
+        type: "Хотдоги",
+        name: "Домашний хот-дог",
+        img: "assets/img/png/HotDogs/Домашний хот-дог.png",
+        cost: 290,
         weight: 250,
-        calorie: 380,
-        description: "Миниатюрные буррито с начинкой из говядины, сыра и овощей. Подаются с соусом гуакамоле.",
+        calorie: 360,
+        description: "Домашний хот-дог с сочной сосиской, маринованными огурцами и соусом на основе майонеза и горчицы. Напоминает вкус детства!",
         composition: {
-          1: "Тортилья",
-          2: "Говядина",
-          3: "Сыр",
-          4: "Овощи",
-          5: "Соус гуакамоле"
+          1: "Булочка для хот-дога",
+          2: "Сосиска",
+          3: "Маринованные огурцы",
+          4: "Соус майонезный",
+          5: "Горчица"
+        }
+      },
+      {
+        id: 2,
+        type: "Хотдоги",
+        name: "Жгучий хот-дог",
+        img: "assets/img/png/HotDogs/Жгучий хот-дог.png",
+        cost: 239,
+        weight: 245,
+        calorie: 370,
+        description: "Хот-дог для любителей острого! Сосиска, острый соус с халапеньо и ломтики красного лука создают жгучую комбинацию.",
+        composition: {
+          1: "Булочка для хот-дога",
+          2: "Сосиска",
+          3: "Острый соус",
+          4: "Перец халапеньо",
+          5: "Красный лук"
+        }
+      },
+      {
+        id: 3,
+        type: "Хотдоги",
+        name: "Классический хот-дог",
+        img: "assets/img/png/HotDogs/Классический хот-дог.png",
+        cost: 220,
+        weight: 215,
+        calorie: 330,
+        description: "Классический хот-дог с сосиской, кетчупом и горчицей. Простой, но невероятно вкусный.",
+        composition: {
+          1: "Булочка для хот-дога",
+          2: "Сосиска",
+          3: "Кетчуп",
+          4: "Горчица"
         }
       }      
     ],
-    basket: [
-      { type: "burgers", id: 1, amount: 1},
-      { type: "burgers", id: 4, amount: 2},
-      { type: "burgers", id: 2, amount: 3},
-      { type: "burgers", id: 6, amount: 2},
-    ]
+    basket: [ ]
   }),
 
   getters: {
@@ -245,6 +236,13 @@ export const useMenuStore = defineStore('MenuStore', {
     getAmountOfItem: (state) => (type, id) => {
       const item = state.basket.find(item => item.type === type && item.id === id);
       return item ? item.amount : 0;
+    },
+
+    getPositionsByType: (state) => (type) => {
+      if (state[type]) {
+        return state[type];
+      }
+      return [];
     }
   },
 

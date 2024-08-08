@@ -6,22 +6,22 @@
       class="w-24 h-auto rounded-xl shadow-md"
       :src="getImageUrl(item.img)"  
       alt="icon">
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col 2xl:gap-1">
         <div>
-          <div class="font-medium text-lg leading-none">
+          <div class="font-medium xl:text-md 2xl:text-lg leading-none">
             {{ item.name }}
           </div>
-          <div class="font-normal text-base text-lightText">
+          <div class="font-normal xl:text-sm 2xl:text-md text-lightText">
             {{ item.weight }}г
           </div>
         </div>
-        <div class="font-medium text-lg">
+        <div class="font-medium xl:text-md 2xl:text-lg">
           {{ item.cost }}₽
         </div>
       </div>
     </div>
-    <div class="bg-gray flex justify-between w-1/3 py-3 px-5 rounded-2xl
-      font-normal text-2xl">
+    <div class="bg-gray flex justify-between items-center xl:w-1/4 2xl:w-1/3 xl:py-2 2xl:py-3 xl:px-3 2xl:px-5 rounded-2xl
+      font-normal xl:text-xl 2xl:text-2xl">
       <button @click="handleRemove" class="text-3xl hover:scale-125 active:scale-95 transition-transform
         duration-100 ease-in-out"> - </button>
         {{ itemAmount }}

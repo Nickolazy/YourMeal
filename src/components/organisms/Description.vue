@@ -2,9 +2,9 @@
   <div class="fixed inset-0 bg-black opacity-85">
   </div>
   <div class="fixed inset-0 flex items-center justify-center">
-    <div class="bg-white p-8 rounded-3xl shadow-lg font-nunito text-black w-1/2">
+    <div class="bg-white p-8 rounded-3xl shadow-lg font-nunito text-black xl:w-7/12 2xl:w-1/2 ">
       <div class="flex justify-between items-start mb-8">
-        <div class="font-semibold text-6xl">
+        <div class="font-semibold xl:text-5xl 2xl:text-6xl">
           {{ item.name }}
         </div>
         <button @click="closeDescription">
@@ -21,15 +21,15 @@
           :src="getImageUrl(item.img)" 
           alt="imageItem">
         <div class="w-2/3">
-          <div class="font-medium text-2xl">
+          <div class="font-medium xl:text-xl 2xl:text-2xl">
             {{ item.description }}
           </div>
           <div class="">
-            <p class="font-bold text-lg mt-2">Состав:</p>
-            <div v-for="(composition, id) in item.composition" :key="item.composition.id" class="font-base text-lg">
+            <p class="font-bold xl:text-md 2xl:text-lg mt-2">Состав:</p>
+            <div v-for="(composition, id) in item.composition" :key="item.composition.id" class="font-base xl:text-md 2xl:text-lg">
               {{ composition }}
             </div>
-            <div class="font-base text-lg text-lightText mt-1">
+            <div class="font-base xl:text-md 2xl:text-lg text-lightText mt-1">
               {{ item.weight }}г, ккал {{ item.calorie }}
             </div>
           </div>

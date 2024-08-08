@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-3xl shadow-xl w-[400px] p-4 hover:scale-105 transition-transform duration-100 ease-in-out">
+    <div class="bg-white rounded-3xl shadow-xl xl:w-[300px] 2xl:w-[400px] flex-shrink-0 p-4 hover:scale-105 transition-transform duration-100 ease-in-out">
       <img 
         class="w-full"
         :src="getImageUrl(item.img)" 
